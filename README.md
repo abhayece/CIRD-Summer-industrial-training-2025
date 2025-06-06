@@ -1,0 +1,1 @@
+# CIRD-Summer-industrial-training-2025
