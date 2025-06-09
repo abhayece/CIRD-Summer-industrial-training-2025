@@ -10,17 +10,8 @@ This module offers a comprehensive guide to Object-Oriented Programming in C++. 
 ## Flow of the Module
 
 mermaid
-flowchart TD
-    A[Start: OOP Basics] --> B[Class and Object] 
-    B --> C[Encapsulation and Abstraction]
-    C --> D[Inheritance and its Types]
-    D --> E[Polymorphism]
-    E --> F[Constructors & Destructors]
-    F --> G[Pointers in OOP]
-    G --> H[Friend Function & this Pointer]
-    H --> I[Parameter Passing Techniques]
-    I --> J[End]
 
+  
 
 
 ## 1. Objective of OOP in C++
