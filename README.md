@@ -5,12 +5,6 @@ This module offers a comprehensive guide to Object-Oriented Programming in C++. 
 
 
 ## Module Type: Educational | Programming Fundamentals
-
-
-## Flow of the Module
-
-mermaid
-
   
 
 
