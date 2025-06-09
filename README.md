@@ -185,3 +185,249 @@ ROS is structured across three distinct levels:
 * **Master (ROS Master):** Coordinates the entire ROS system by managing the registration and lookup of nodes, topics, and services.
 * **Parameter Server:** Stores and manages configuration parameters accessible by all nodes.
 * **Bag Files:** Used to record and playback message data for offline analysis and debugging.
+
+
+**Topic 1: Installing ROS Noetic on Ubuntu 20.04**
+
+1.1 Prerequisites
+
+●     Ubuntu 20.04 LTS
+
+●     Minimum 15GB disk space
+
+●     Internet connection
+
+1.2 Repository Configuration
+
+●     Add ROS repository:
+bash
+
+ 
+
+ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' Import GPG key:bash
+
+
+
+ 
+
+ 
+
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+1.3 Installation
+
+●     Update packages: sudo apt update
+●     Install full desktop bundle:bash
+●     sudo apt install ros-noetic-desktop-full
+
+1.4 Dependency Setup
+●     Initialize rosdep:bash
+●     sudo rosdep init && rosdep update
+
+1.5 Environment Configuration
+
+●     Permanent setup:bash
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+●     source ~/.bashrc
+
+1.6 Verification
+●     Test installation: roscore
+●     Install build tools:bash
+●     sudo apt install python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+Topic 2: Beginner Tutorial 1 - Workspace Setup
+
+2.1 Create Catkin Workspace
+
+bash
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+
+2.2 Source Workspace
+
+bash source devel/setup.bash
+
+2.3 Verify Workspace Path
+
+bash echo $ROS_PACKAGE_PATH
+Topic 3: Beginner Tutorial 2 - ROS Filesystem
+
+3.1 Key Directories
+●     /opt/ros/noetic: Core ROS installation
+●     ~/catkin_ws/src: User workspace
+
+3.2 Navigation Commands
+Command
+Functionality
+rospack find
+Locate package directory
+roscd
+	
+
+Change to package directory
+
+rosls
+	
+
+List package contents
+Topic 4: Beginner Tutorial 3 - Creating Packages
+
+4.1 Package Structure
+
+ 
+
+bash
+
+catkin_ws/src/ 
+
+└── my_package/ 
+
+    ├── CMakeLists.txt 
+
+    ├── package.xml 
+
+    ├── scripts/    # Python nodes 
+
+    ├── src/        # C++ nodes 
+
+    └── msg/        # Custom messages
+
+ 
+
+ 
+
+4.2 Create New Package
+
+bash
+
+catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+Topic 5: Beginner Tutorial 4 - Building Packages
+
+5.1 Build Process
+
+●     From workspace root: catkin_make
+
+●     Build specific package: catkin_make --pkg <package_name>
+
+5.2 Dependency Resolution
+
+bash
+
+rosdep install --from-paths src --ignore-src -r -y
+Topic 6: Beginner Tutorial 5 - ROS Nodes
+
+6.1 Node Management
+
+Command
+	
+
+Functionality
+
+rosrun pkg node
+	
+
+Execute a node
+
+rosnode list
+	
+
+List active nodes
+
+rosnode info /node
+	
+
+Show node details
+
+6.2 Python Node Template
+
+python
+
+#!/usr/bin/env python3
+
+import rospy
+
+rospy.init_node('my_node')
+
+rate = rospy.Rate(10)  # 10Hz
+
+while not rospy.is_shutdown():
+
+    # Your code here
+
+    rate.sleep()
+Topic 7: Beginner Tutorial 6 - ROS Topics
+
+7.1 Topic Communication
+
+Publisher Node → Topic (Message Bus) → Subscriber Node
+
+7.2 Diagnostic Tools
+
+●     rostopic list: Show active topics
+
+●     rostopic echo /topic: Print topic data
+
+●     rostopic hz /topic: Check publishing rate
+Topic 8: Beginner Tutorial 7 - ROS Services
+
+8.1 Service vs Topic
+
+Topics
+	
+
+Services
+
+Asynchronous (continuous)
+	
+
+Synchronous (on-demand)
+
+1:N communication
+	
+
+1:1 communication
+
+8.2 Service Commands
+
+●     rosservice list
+
+●     rosservice call /service args
+Topic 9: Beginner Tutorial 8 - roslaunch
+
+9.1 Launch File Structure
+
+xml
+
+<launch>
+
+  <node
+
+    pkg="turtle_teleop"
+
+    type="turtle_teleop_key"
+
+    name="teleop"
+
+    output="screen"/>
+
+</launch>
+
+9.2 Launch Execution
+
+bash
+
+roslaunch package_name launch_file.launch
+Topic 10: Beginner Tutorial 9-10 - Custom Messages
+
+10.1 Create Custom Message
+- Define in msg/MyMessage.msg:
+ float32 position float32 velocity
+
+10.2 Build Configuration
+- In package.xml:
+xml <build_depend>message_generation</build_depend> <exec_depend>message_runtime</exec_depend>
+ - In CMakeLists.txt:
+cmake find_package(message_generation REQUIRED) add_message_files(FILES MyMessage.msg) generate_messages(DEPENDENCIES std_msgs)
+
+ 
+
