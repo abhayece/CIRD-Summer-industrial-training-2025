@@ -11,7 +11,7 @@ This module offers a comprehensive guide to Object-Oriented Programming in C++. 
 
 mermaid
 flowchart TD
-    A[Start: OOP Basics] --> B[Class and Object]
+    A[Start: OOP Basics] --> B[Class and Object] 
     B --> C[Encapsulation and Abstraction]
     C --> D[Inheritance and its Types]
     D --> E[Polymorphism]
