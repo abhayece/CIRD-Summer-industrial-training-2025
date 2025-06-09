@@ -2,9 +2,6 @@
 # Object-Oriented Programming in C++ (OOP Module)
 
 This module offers a comprehensive guide to Object-Oriented Programming in C++. It explains key concepts using code samples, flowcharts, comparison tables, and visualizations to enhance understanding.
-
-
-## Module Type: Educational | Programming Fundamentals
   
 
 
