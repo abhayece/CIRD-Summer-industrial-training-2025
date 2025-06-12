@@ -208,3 +208,73 @@ In the second half of my session, I applied the learned OOP principles by develo
 * Derived classes with specific implementations
 * Drawing shapes and calculating their areas polymorphically
 ```
+# DAY 5
+
+```markdown
+# Communication Protocols and Raspberry Pi I2C Implementation
+
+This repository provides a comprehensive understanding of various digital communication protocols and demonstrates practical inter-device communication using the I2C protocol with Raspberry Pi units.
+
+## Table of Contents
+
+1.  [Theoretical Overview of Communication Protocols](#1-theoretical-overview-of-communication-protocols)
+    1.1. [I2C (Inter-Integrated Circuit)](#11-i2c-inter-integrated-circuit)
+    1.2. [UART (Universal Asynchronous Receiver/Transmitter)](#12-uart-universal-asynchronous-receivertransmitter)
+    1.3. [SPI (Serial Peripheral Interface)](#13-spi-serial-peripheral-interface)
+    1.4. [RS-232 (Recommended Standard 232)](#14-rs-232-recommended-standard-232)
+    1.5. [RS-422 (Recommended Standard 422)](#15-rs-422-recommended-standard-422)
+    1.6. [RS-485 (Recommended Standard 485)](#16-rs-485-recommended-standard-485)
+2.  [Practical Implementation of I2C Communication Between Two Raspberry Pis](#2-practical-implementation-of-i2c-communication-between-two-raspberry-pis)
+
+---
+
+## 1. Theoretical Overview of Communication Protocols
+
+The initial segment of the session was dedicated to an in-depth study of several fundamental digital communication protocols. Each protocol was analyzed concerning its operational principles, architecture, data transfer capabilities, and typical application domains. The following protocols were covered:
+
+### 1.1. I2C (Inter-Integrated Circuit)
+
+* **Nature**: Synchronous, half-duplex, multi-master/multi-slave serial bus.
+* **Key Features**: Uses two wires (SDA for data, SCL for clock), supports unique device addressing, ideal for short-distance communication between integrated circuits on a PCB.
+* **Applications**: Sensors (temperature, accelerometers), EEPROMs, real-time clocks.
+
+### 1.2. UART (Universal Asynchronous Receiver/Transmitter)
+
+* **Nature**: Asynchronous, full-duplex serial communication.
+* **Key Features**: Employs two data lines (Tx for transmit, Rx for receive), relies on pre-agreed baud rates for synchronization, simple to implement for point-to-point communication.
+* **Applications**: GPS modules, Bluetooth modules, serial consoles, microcontrollers communicating with PCs.
+
+### 1.3. SPI (Serial Peripheral Interface)
+
+* **Nature**: Synchronous, full-duplex, master-slave serial bus.
+* **Key Features**: Utilizes four wires (MOSI, MISO, SCLK, SS/CS), offers high data transfer rates, highly flexible for various peripheral devices.
+* **Applications**: SD cards, flash memory, LCD controllers, ADCs/DACs.
+
+### 1.4. RS-232 (Recommended Standard 232)
+
+* **Nature**: Asynchronous, full-duplex, point-to-point serial communication.
+* **Key Features**: Older standard, uses varying voltage levels for signaling, limited speed and distance compared to newer standards.
+* **Applications**: Legacy modems, printers, industrial control systems (older equipment).
+
+### 1.5. RS-422 (Recommended Standard 422)
+
+* **Nature**: Differential, full-duplex, multi-drop (one driver, multiple receivers) serial communication.
+* **Key Features**: Employs differential signaling for enhanced noise immunity, supports longer distances and higher speeds than RS-232.
+* **Applications**: Industrial automation, long-distance data acquisition, telecommunications.
+
+### 1.6. RS-485 (Recommended Standard 485)
+
+* **Nature**: Differential, half-duplex, multi-point serial communication.
+* **Key Features**: Builds upon RS-422 with multi-point capabilities (multiple drivers and receivers), excellent noise immunity, robust for industrial environments and very long distances.
+* **Applications**: Industrial control networks (PLCs, SCADA), building automation, DMX512 lighting control.
+
+## 2. Practical Implementation of I2C Communication Between Two Raspberry Pis
+
+The second half of the session transitioned into a practical demonstration and hands-on exercise, focusing on establishing I2C communication between two Raspberry Pi single-board computers.
+
+* **Setup**: Two Raspberry Pi units were configured, with one designated as the I2C Master and the other as the I2C Slave. Necessary electrical connections were made between their respective I2C pins (SDA, SCL, GND).
+* **Software Configuration**: The I2C interfaces on both Raspberry Pis were enabled through the `raspi-config` tool, and the required Python libraries (e.g., `smbus` or `smbus2`) were installed.
+* **Code Development**: Python scripts were developed for both the Master and Slave Raspberry Pis. The Master script was programmed to send data (e.g., a simple command or a numerical value) to the Slave and subsequently read data back. The Slave script was designed to listen for incoming I2C data from the Master, process it (if required), and respond with its own data.
+* **Demonstration**: Successful communication was demonstrated, showing data packets being reliably exchanged between the two Raspberry Pi units via the I2C bus. This practical exercise solidified the theoretical understanding of I2C addressing, read/write operations, and clock synchronization in a real-world embedded system context.
+* This practical session effectively illustrated the capabilities and implementation nuances of I2C, reinforcing its utility for inter-device communication in embedded projects.
+```
