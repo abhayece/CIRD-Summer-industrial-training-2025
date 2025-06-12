@@ -1,149 +1,82 @@
-# CIRD-Summer-industrial-training-2025
+# C++ OOPs Concepts and Project Implementation
 
-# Object-Oriented Programming (OOP) in C++ - A Summary
+This repository summarizes my learning journey and practical application of Object-Oriented Programming (OOP) principles in C++. It covers foundational OOP concepts and demonstrates their use through two real-world projects.
 
-Object-Oriented Programming (OOP) is a programming paradigm that organizes software design around data, or objects, rather than functions and logic. In C++, OOP is a fundamental aspect that allows for the creation of modular, reusable, and scalable code.
+## Table of Contents
 
-## Core Concepts (The Pillars of OOP in C++)
+- [1. OOPs Concepts Studied](#1-oops-concepts-studied)
+  - [1.1. Introduction to OOP](#11-introduction-to-oop)
+  - [1.2. Basic OOP Concepts](#12-basic-oops-concepts)
+  - [1.3. Special Topics](#13-special-topics)
+- [2. Projects Completed](#2-projects-completed)
+  - [2.1. Project 1: Bank Account Management System](#21-project-1-bank-account-management-system)
+  - [2.2. Project 2: Shape Area Calculator Using Abstraction and Polymorphism](#22-project-2-shape-area-calculator-using-abstraction-and-polymorphism)
 
-C++ fully supports the four primary pillars of OOP:
+## 1. OOPs Concepts Studied
 
-### 1. Encapsulation
-* **Definition:** The bundling of data (member variables) and the functions (member methods) that operate on that data into a single unit, known as a `class`. It also involves restricting direct access to some of an object's components to prevent unintended modification.
-* **C++ Implementation:**
-    * Achieved using **access specifiers**:
-        * `public`: Members are accessible from anywhere.
-        * `private`: Members are only accessible from within the same class. This is typically used for data hiding.
-        * `protected`: Members are accessible within the same class and by derived classes.
-    * Example:
-      ```cpp
-      class Car {
-      private:
-          std::string model; // Data is private
-          int speed;
-      public:
-          void accelerate() { // Method to operate on data
-              speed += 10;
-          }
-          std::string getModel() { // Public method to access private data
-              return model;
-          }
-      };
-      ```
-* **Benefit:** Data security, improved code organization, and easier maintenance.
+During the first half of my session, I focused on understanding the foundational concepts of Object-Oriented Programming (OOP) in C++.
 
-### 2. Abstraction
-* **Definition:** Showing only essential features of an object to the outside world and hiding the complex implementation details. In C++, this is often achieved through interfaces and abstract classes.
-* **C++ Implementation:**
-    * **Abstract Classes:** Classes that contain at least one pure virtual function (a virtual function declared with `= 0`). You cannot create objects of an abstract class.
-      ```cpp
-      class Shape { // Abstract Class
-      public:
-          virtual void draw() = 0; // Pure virtual function
-          void getDescription() {
-              std::cout << "This is a generic shape." << std::endl;
-          }
-      };
-      ```
-    * **Header Files:** Often used to expose class interfaces (`.h` or `.hpp` files) while hiding implementation details in source files (`.cpp`).
-* **Benefit:** Reduces complexity, improves readability, and makes systems easier to design and manage.
+### 1.1. Introduction to OOP
 
-### 3. Inheritance
-* **Definition:** A mechanism where a new class (derived class or child class) can acquire properties (member variables) and behaviors (member methods) from an existing class (base class or parent class). This promotes code reusability and establishes an "is-a" relationship.
-* **C++ Implementation:**
-    * Uses the colon (`:`) followed by an access specifier (`public`, `protected`, `private`) for the base class.
-    * Example:
-      ```cpp
-      class Vehicle { // Base class
-      public:
-          void start() { std::cout << "Vehicle started." << std::endl; }
-      };
+* **Difference between procedural and object-oriented programming**: Explored the fundamental distinctions between these two programming paradigms.
+* **Benefits of OOP**: Understood the advantages such as Modularity, Reusability, and Scalability.
 
-      class Car : public Vehicle { // Derived class, public inheritance
-      public:
-          void drive() { std::cout << "Car is driving." << std::endl; }
-      };
-      ```
-    * **Types of Inheritance:** Single, Multiple (using comma-separated base classes), Multilevel, Hierarchical, Hybrid.
-* **Benefit:** Code reusability, reduced redundancy, and support for runtime polymorphism.
+### 1.2. Basic OOP Concepts
 
-### 4. Polymorphism
-* **Definition:** The ability of an object to take on many forms. In C++, it refers to the ability to define one interface and have multiple implementations.
-* **C++ Implementation:**
-    * **Compile-time Polymorphism (Static Polymorphism):**
-        * **Function Overloading:** Multiple functions with the same name but different parameters (number, type, or order).
-        * **Operator Overloading:** Defining how operators (like `+`, `-`, `*`) behave for user-defined types.
-        * **Templates:** Allows writing generic code that works with different data types.
-    * **Runtime Polymorphism (Dynamic Polymorphism):**
-        * Achieved through **virtual functions** and **pointers/references to base class objects**.
-        * When a virtual function is called through a base class pointer or reference, the actual function executed is determined at runtime based on the type of the object pointed to.
-        * Example:
-          ```cpp
-          class Animal {
-          public:
-              virtual void makeSound() { // Virtual function
-                  std::cout << "Animal makes a sound." << std::endl;
-              }
-          };
+A structured summary of the core OOP concepts covered includes:
 
-          class Dog : public Animal {
-          public:
-              void makeSound() override { // Overrides base class virtual function
-                  std::cout << "Woof!" << std::endl;
-              }
-          };
+* **Class and Object**: Learned about classes as blueprints and objects as instances of real-world entities.
+* **Encapsulation**: Understood the concept of wrapping data and functions into a single unit.
+* **Abstraction**: Studied how to hide internal details and show only the necessary information.
+* **Inheritance**: Explored the mechanism of acquiring properties and behaviors from another class.
+* **Polymorphism**: Learned about the ability to use the same function in different forms.
 
-          class Cat : public Animal {
-          public:
-              void makeSound() override {
-                  std::cout << "Meow!" << std::endl;
-              }
-          };
+### 1.3. Special Topics
 
-          // In main:
-          // Animal* animalPtr1 = new Dog();
-          // Animal* animalPtr2 = new Cat();
-          // animalPtr1->makeSound(); // Calls Dog::makeSound()
-          // animalPtr2->makeSound(); // Calls Cat::makeSound()
-          ```
-* **Benefit:** Flexibility, extensibility, and cleaner, more readable code that can adapt to different object types.
+Beyond the basics, the following special OOP topics were also covered:
 
-## Additional C++ OOP Concepts
+* Constructor and Destructor
+* Function Overloading
+* Operator Overloading (introductory)
+* Virtual Functions & Pure Virtual Functions
+* Static Members
 
-* **Classes and Objects:**
-    * **Class:** A blueprint or a template for creating objects. It defines the structure (data members) and behavior (member functions) that objects of that class will have.
-    * **Object:** An instance of a class. When a class is defined, no memory is allocated until an object of that class is created.
-* **Constructors:** Special member functions that are automatically called when an object of a class is created. They are used to initialize the object's data members.
-    * Default Constructor, Parameterized Constructor, Copy Constructor.
-* **Destructors:** Special member functions that are automatically called when an object is destroyed (goes out of scope or is explicitly deleted). They are used to perform cleanup tasks, such as releasing dynamically allocated memory.
-* **`this` Pointer:** A pointer that refers to the current object. It is implicitly passed to all non-static member functions.
-* **`static` Members:**
-    * **Static Data Members:** Shared by all objects of the class; only one copy exists for the entire class.
-    * **Static Member Functions:** Can only access static data members and static member functions. They can be called without creating an object of the class.
-* **Friend Functions and Friend Classes:**
-    * **Friend Function:** A non-member function that has special permission to access `private` and `protected` members of a class.
-    * **Friend Class:** A class whose member functions are allowed to access the `private` and `protected` members of another class. Use sparingly as they violate encapsulation.
-* **Operator Overloading:** Allows you to redefine the meaning of operators (e.g., `+`, `-`, `<<`, `>>`) for user-defined types. This makes code more intuitive and readable when working with objects.
-* **Virtual Destructors:** Essential when dealing with polymorphism and inheritance. If you `delete` a base class pointer that points to a derived class object, and the base class destructor is not virtual, the derived class's destructor will not be called, leading to memory leaks.
+## 2. Projects Completed
 
-## Advantages of OOP in C++
+In the second half of my session, I applied the learned OOP principles by developing two projects based on real-world scenarios.
 
-* **Modularity:** Code is organized into self-contained objects, making it easier to manage.
-* **Reusability:** Inheritance promotes code reuse, reducing development time and effort.
-* **Maintainability:** Encapsulation and abstraction make code easier to understand, debug, and modify.
-* **Scalability:** Well-designed OOP systems can be easily extended and scaled for larger projects.
-* **Flexibility:** Polymorphism allows for more flexible and adaptable code.
-* **Improved Software Design:** Encourages a more structured and logical approach to problem-solving by modeling real-world entities.
+### 2.1. Project 1: Bank Account Management System
 
-## Disadvantages of OOP in C++ (General OOP considerations)
+**Objective**: To create a simple banking system that allows creating accounts, depositing and withdrawing money, and displaying account details.
 
-* **Steeper Learning Curve:** Can be more complex to grasp for beginners due to its multiple concepts.
-* **Increased Overhead:** May introduce slight performance overhead in some cases (e.g., virtual function calls) compared to pure procedural programming.
-* **Larger Program Size:** Can sometimes result in larger executable files due to added abstraction.
+**Concepts Used**:
+* Classes & Objects 
+* Constructor Overloading 
+* Function Overloading (specifically `deposit()` with `int` and `float` arguments) 
+* Static Data Members 
+* Destructor 
 
----
+**Key Features**:
+* Creation of multiple bank accounts 
+* Deposit & withdraw functionality 
+* Use of default constructor 
+* Static counter to track the number of accounts
+  
 
-Understanding these OOP concepts in C++ is crucial for writing robust, efficient, and maintainable software.
+In the second half of my session, I applied the learned OOP principles by developing two projects based on real-world scenarios.
 
+### 2.2. Project 2: Shape Area Calculator Using Abstraction and Polymorphism
 
-done
+**Objective**: To implement an abstract base class for different geometric shapes and calculate their areas using runtime polymorphism.
+
+**Concepts Used**:
+* Abstract Class (Shape) 
+* Virtual Functions (`draw()`, `calculateArea()`) 
+* Inheritance (Circle, Rectangle derived from Shape) 
+* Dynamic Memory Allocation (`new`, `delete`) 
+* Function Overriding 
+
+**Key Features**:
+* Abstract class with pure virtual functions 
+* Derived classes with specific implementations 
+* Drawing shapes and calculating their areas polymorphically 
