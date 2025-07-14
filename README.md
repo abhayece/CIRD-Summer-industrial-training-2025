@@ -384,27 +384,52 @@ OOPS (Object-Oriented Programming System) is a programming paradigm based on obj
 ---
 
 
- <h1>Industrial Visit – CIRD Lab</h1>
+<h2>Visit to Jaypee Nigrie Super Thermal Power Plant</h2>
 
 <p>
-  As part of the <strong>Summer Industrial Training Program</strong>, we visited the 
-  <strong>Center for Innovation, Research, and Development (CIRD)</strong>, which focuses on 
-  research in <em>robotics, embedded systems, industrial automation</em>, and <em>AI-integrated systems</em>.
+  During the <strong>fifth week</strong> of the industrial training, we had the opportunity to visit the 
+  <strong>Jaypee Nigrie Super Thermal Power Plant</strong> – a state-of-the-art facility producing electricity 
+  at a massive scale using coal-based thermal energy conversion.
 </p>
 
-<h3>Key Observations and Takeaways:</h3>
+<h3>👷 What We Explored:</h3>
+
+<h4>✅ Complete Power Generation Workflow:</h4>
 <ul>
-  <li>Explored <strong>ROS-based mobile robots</strong> using SLAM and LiDAR navigation.</li>
-  <li>Observed <strong>multi-sensor fusion</strong> (GPS, IMU, cameras, thermal sensors).</li>
-  <li>Learned about <strong>cloud-based control systems</strong> using MQTT and Node-RED.</li>
-  <li>Worked with <strong>Jetson Nano</strong> running AI models for real-time detection and tracking.</li>
-  <li>Demonstrated <strong>ROSBag</strong> recording and <strong>live telemetry dashboards</strong>.</li>
+  <li>Studied the working of <strong>Boilers, Turbines, Generators</strong>, and <strong>Cooling Towers</strong>.</li>
+  <li>Understood the <strong>coal handling system</strong>, <strong>ash disposal system</strong>, and 
+      <strong>air pollution control mechanisms</strong> (ESP, FGD, etc.).</li>
 </ul>
 
-<p>
-  The visit helped bridge the gap between theoretical knowledge and real-world deployment 
-  in modern automation systems.
-</p>
+<h4>✅ Industrial Automation Systems:</h4>
+<ul>
+  <li>Learned the integration of <strong>PLC (Programmable Logic Controller)</strong> for local control of machinery.</li>
+  <li>Observed <strong>SCADA (Supervisory Control and Data Acquisition)</strong> for centralized real-time monitoring 
+      and fault diagnosis.</li>
+  <li>Understood the role of <strong>DCS (Distributed Control System)</strong> in process control and automation logic.</li>
+</ul>
+
+<h4>✅ Control Room Visit:</h4>
+<ul>
+  <li>Saw real-time <strong>SCADA dashboards</strong> displaying temperature, pressure, load, and generation statistics.</li>
+  <li>Observed alarm and safety management systems, interlocking logic, and system redundancy.</li>
+</ul>
+
+<h4>✅ Hardware Insights:</h4>
+<ul>
+  <li>Examined field-level devices: <strong>RTDs, Pressure Transmitters, Control Valves, Actuators</strong>, and <strong>Sensors</strong>.</li>
+  <li>Studied <strong>wiring practices, panel design</strong>, and how different controllers communicate via 
+      industrial protocols (<strong>MODBUS, PROFIBUS</strong>).</li>
+</ul>
+
+<h3>💡 Key Takeaways:</h3>
+<ul>
+  <li>Gained real-world exposure to how <strong>large-scale automation systems</strong> run 24x7 with reliability and precision.</li>
+  <li>Learned the importance of integration between <strong>hardware (sensors, actuators)</strong> and 
+      <strong>software (DCS/PLC logic)</strong>.</li>
+  <li>Understood how <strong>data flows from field to control room</strong>, ensuring system stability, safety, and efficiency.</li>
+</ul>
+
 
 <hr>
 
