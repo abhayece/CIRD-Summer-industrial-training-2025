@@ -383,38 +383,99 @@ OOPS (Object-Oriented Programming System) is a programming paradigm based on obj
 
 ---
 
-### *Industrial Visit – CIRD Lab*
 
-As part of the Summer Industrial Training, we visited the *Center for Innovation, Research, and Development (CIRD)*. The visit provided valuable insight into cutting-edge research and industrial automation practices.  
-- Observed *real-time applications* of *autonomous robotics, **embedded systems, and **IoT-enabled devices* in production environments  
-- Demonstrations included *ROS-based robots, **sensor fusion, **cloud-integrated control systems, and **edge computing with Jetson Nano*  
-- Gained exposure to *LiDAR-based navigation, **thermal imaging, **motor control mechanisms, and **live telemetry dashboards*  
-- The visit bridged the gap between theoretical learning and practical implementation, helping us understand how software and hardware interact in real-world systems  
+ <h1>Industrial Visit – CIRD Lab</h1>
 
----
+<p>
+  As part of the <strong>Summer Industrial Training Program</strong>, we visited the 
+  <strong>Center for Innovation, Research, and Development (CIRD)</strong>, which focuses on 
+  research in <em>robotics, embedded systems, industrial automation</em>, and <em>AI-integrated systems</em>.
+</p>
 
-### *Project – Mobile Interface for Live Robot Control*
+<h3>Key Observations and Takeaways:</h3>
+<ul>
+  <li>Explored <strong>ROS-based mobile robots</strong> using SLAM and LiDAR navigation.</li>
+  <li>Observed <strong>multi-sensor fusion</strong> (GPS, IMU, cameras, thermal sensors).</li>
+  <li>Learned about <strong>cloud-based control systems</strong> using MQTT and Node-RED.</li>
+  <li>Worked with <strong>Jetson Nano</strong> running AI models for real-time detection and tracking.</li>
+  <li>Demonstrated <strong>ROSBag</strong> recording and <strong>live telemetry dashboards</strong>.</li>
+</ul>
 
-Led the development of a cross-platform mobile interface to *remotely control an inspection robot* and *stream live annotated video* with sensor feedback.  
-- *Frontend (React Native + Expo)*: Real-time MJPEG video decoding, dynamic robot status panel (battery, GPS, time), manual joystick control, and Google Maps integration  
-- *Backend (Express.js + MongoDB Atlas)*: Receives annotated video frames and sensor data from Jetson Nano, logs values in real time, and exposes API endpoints for app access  
-- *Hardware Integration*: ROSBridge + custom CSV data transfer for camera, thermal sensor, GPS, and motor control via Jetson Nano  
-- *Use Case: Enables **remote industrial monitoring*, especially in areas unsafe for human inspection, with visual + telemetry intelligence  
-- Focused on seamless UX, cloud sync, and fault-tolerant communication between robot and app  
+<p>
+  The visit helped bridge the gap between theoretical knowledge and real-world deployment 
+  in modern automation systems.
+</p>
 
----
+<hr>
 
-### *Intel Unnati AI Workshop*
+<h1>Project – Real-Time Synchronous Digital Clock with Stopwatch</h1>
 
-Successfully completed the *Intel Unnati Workshop on AI & ML, hosted in collaboration with **EdGate Technologies* and *Intel Corporation*. The workshop was a deep dive into both theoretical and practical aspects of AI development.  
-- *Core Concepts*:  
-  - Math: Linear Algebra (dot product, eigenvalues), Statistics (mean, variance), Probability  
-  - ML Models: Linear/Polynomial Regression, SVM, Decision Trees, Naive Bayes, K-Means  
-  - DL Models: Neural Networks, Activation Functions, Optimizers, Backpropagation  
-- *Hands-On Projects*:  
-  - *House Price Prediction* – Trained regression models to predict real estate values  
-  - *PIMA Diabetes Detection* – Built classifiers using logistic regression & SVM  
-  - *Customer Segmentation* – Unsupervised clustering with K-Means & DBSCAN  
-  - *Digit Recognition* – Built a CNN using TensorFlow/Keras on the MNIST dataset  
-- *Tools Used*: Python 3.11, Scikit-learn, TensorFlow, Pandas, Seaborn, Google Colab  
-- Emphasis was placed on *real-world data, **model evaluation, and **hyperparameter tuning*, with visualizations and insights shared during peer presentations
+<p>
+  This project involved designing and implementing a <strong>Real-Time Digital Clock with Stopwatch</strong> 
+  using <strong>Verilog HDL</strong>, deployed on the <strong>DE1-SoC FPGA board</strong>.
+</p>
+
+<h3>📌 Project Features:</h3>
+<ul>
+  <li>Displays <strong>real-time HH:MM:SS</strong> using clock divider from 50 MHz input clock.</li>
+  <li><strong>Stopwatch mode</strong> supports start, stop, and reset (MM:SS.ms format).</li>
+  <li>Control via onboard <strong>buttons and switches</strong>.</li>
+  <li>Time shown on <strong>7-segment displays</strong> via dynamic multiplexing.</li>
+</ul>
+
+<h3>🧩 Design Modules:</h3>
+<ul>
+  <li><strong>Clock Divider:</strong> Generates 1 Hz and 1 kHz pulses for clock & stopwatch.</li>
+  <li><strong>FSM:</strong> Controls stopwatch modes (idle, running, reset).</li>
+  <li><strong>Counter Logic:</strong> Increments time synchronously.</li>
+  <li><strong>Decoder:</strong> Converts binary to 7-segment display format.</li>
+</ul>
+
+<h3>🧠 Key Learnings:</h3>
+<ul>
+  <li>Practical application of <strong>RTL design principles</strong> and FSM logic.</li>
+  <li>Hands-on experience with <strong>ModelSim simulation</strong> and <strong>Quartus synthesis</strong>.</li>
+  <li>Understanding <strong>timing constraints, debugging</strong>, and hardware interfacing.</li>
+</ul>
+
+<hr>
+
+<h1>Intel Unnati AI Workshop</h1>
+
+<p>
+  Completed a hands-on workshop organized by <strong>Intel</strong> and <strong>EdGate Technologies</strong> 
+  focusing on <em>AI & Machine Learning</em> from both theoretical and applied perspectives.
+</p>
+
+<h3>🧠 Core Concepts Covered:</h3>
+<ul>
+  <li><strong>Math:</strong> Linear algebra, dot product, eigenvalues, statistics & probability</li>
+  <li><strong>ML Algorithms:</strong> Linear & logistic regression, SVM, Decision Trees, Naive Bayes</li>
+  <li><strong>Unsupervised Learning:</strong> K-Means, DBSCAN</li>
+  <li><strong>Deep Learning:</strong> Neural networks, activation functions, backpropagation</li>
+</ul>
+
+<h3>🛠️ Projects Executed:</h3>
+<ul>
+  <li><strong>House Price Prediction:</strong> Used linear and polynomial regression.</li>
+  <li><strong>Diabetes Detection:</strong> Built classifiers using SVM & logistic regression.</li>
+  <li><strong>Customer Segmentation:</strong> K-Means clustering on mall customer dataset.</li>
+  <li><strong>Digit Recognition:</strong> CNN using TensorFlow/Keras on MNIST.</li>
+</ul>
+
+<h3>🧰 Tools Used:</h3>
+<ul>
+  <li>Python 3.11</li>
+  <li>Scikit-learn, TensorFlow, Pandas, Seaborn</li>
+  <li>Google Colab for cloud-based experimentation</li>
+</ul>
+
+<h3>📈 Learning Outcomes:</h3>
+<ul>
+  <li>Applied complete <strong>ML pipeline</strong>: data preprocessing to model evaluation.</li>
+  <li>Understood model interpretability via <strong>confusion matrices and visualization</strong>.</li>
+  <li>Collaborated in peer reviews and shared findings in presentations.</li>
+</ul>
+
+<hr>
+
